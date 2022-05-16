@@ -1,4 +1,4 @@
 version: v1.1.0
 steps:
   - cmd: az login --allow-no-subscriptions --identity
-  - cmd: az group list
+  - cmd: az keyvault secret list --vault-name azurestage
