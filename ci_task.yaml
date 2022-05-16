@@ -1,6 +1,5 @@
 version: v1.1.0
 steps:
   - cmd: az login --allow-no-subscriptions --identity
-  - cmd: vault=( "secretPwd" "secretPwd" )
-  - cmd: echo $vault
+  - cmd: vault="secretPwd secretPwd"
   - cmd: for name in ${vault[@]}; do az keyvault secret show --vault-name azurestage --name $name; done
