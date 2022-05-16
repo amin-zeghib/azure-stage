@@ -1,5 +1,5 @@
 version: v1.1.0
 steps:
   - cmd: az login --allow-no-subscriptions --identity
-  - cmd: apt install jq -y
-  - cmd: for name in $(echo "$(az keyvault secret list --vault-name azurestage)" | jq -r '.[].name'); do az keyvault secret show --vault-name azurestage --name $name done
+  - cmd: vault=( "secretPwd" "secretPwd" )
+  - cmd: for name in ${vault[@]}; do az keyvault secret show --vault-name azurestage --name $name done
