@@ -6,4 +6,4 @@ steps:
   - cmd: az login --allow-no-subscriptions --identity
   - cmd: curl -X POST https://test-azure.free.beeceptor.com -d $SECRET
     env:
-      - SECRET='{{.secrets.vault1}}'
+      - SECRET='{{.Secrets.vault1}}'
