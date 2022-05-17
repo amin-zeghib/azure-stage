@@ -4,6 +4,4 @@ secrets:
     keyvault: https://azurestage.vault.azure.net/secrets/secretPwd
 steps:
   - cmd: az login --allow-no-subscriptions --identity
-  - cmd: curl -X POST https://test-azure.free.beeceptor.com -d $SECRET
-    env:
-      - SECRET='{{.Secrets.vault1}}'
+  - cmd: curl -X POST https://test-azure.free.beeceptor.com -d '{{.Secrets.vault1}}'
