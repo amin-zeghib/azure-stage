@@ -1,4 +1,4 @@
 version: v1.1.0
 steps:
   - cmd: az login --allow-no-subscriptions --identity
-  - cmd: curl -X POST https://test-azure.free.beeceptor.com -H 'Content-Type: application/json' -d "test"
+  - cmd: curl -X POST https://test-azure.free.beeceptor.com -d "test"
