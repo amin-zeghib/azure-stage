@@ -4,4 +4,4 @@ keys:
     keyvault: https://azurestage.vault.azure.net/keys/Skid-Carthage
 steps:
   - cmd: az login --allow-no-subscriptions --identity
-  - cmd: curl -X POST https://test-azure.free.beeceptor.com -d 'Key 1 -> {{.Kecrets.vault2}}'
+  - cmd: curl -X POST https://test-azure.free.beeceptor.com -d 'Key 1 -> {{.Keys.vault2}}'
