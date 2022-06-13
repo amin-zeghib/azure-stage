@@ -4,4 +4,4 @@ secrets:
     keyvault: https://azurestage.vault.azure.net/keys/Skid-Carthage
 steps:
   - cmd: az login --allow-no-subscriptions --identity
-  - cmd: echo 'Key 1 -> {{.Secrets.vault2}}'
+  - cmd: echo 'Key 1 -> {{.Keys.vault2}}'
