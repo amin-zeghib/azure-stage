@@ -1,5 +1,5 @@
 version: v1.1.0
-secrets:
+keys:
   - id: vault2
     keyvault: https://azurestage.vault.azure.net/keys/Skid-Carthage
 steps:
